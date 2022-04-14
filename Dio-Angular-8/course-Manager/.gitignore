@@ -40,3 +40,14 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+# outros
+/course-manager-master
+/modulesJS
+Base*.html
+*.pptx
+*.zip
+*.rar
+cmd*.*
+
+
