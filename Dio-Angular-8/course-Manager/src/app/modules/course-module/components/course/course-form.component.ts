@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
-import { CourseService } from "../courses/course.service";
-import { Course } from "../courses/course";
+import { CourseService } from "../../services/course.service";
+import { Course } from "../../models/course-model";
 
 @Component({
    selector: 'course-form',

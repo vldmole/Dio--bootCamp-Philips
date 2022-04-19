@@ -11,5 +11,4 @@ export class Course
    duration: number = NaN;
    rating: number = NaN;
    releaseDate: string = '';
-
 }
