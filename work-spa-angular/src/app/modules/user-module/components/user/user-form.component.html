@@ -1,0 +1,107 @@
+
+<h2>User Info</h2>
+<br/>
+
+<form #userForm="ngForm" *ngIf="user">
+   
+   <div class="form-group row">
+      <label class="col-sm-1">ID: {{user.id}}</label>
+   </div>
+
+   <div class="form-group row">
+      <label class="col-sm-1 col-form-label">Name:</label>
+      <div class="col-sm-6">
+         <input [(ngModel)]="user.name" 
+            name="userName" 
+            #userName="ngModel" 
+            class="form-control" 
+            required="true" 
+            minlength="10"
+            maxlength="30" 
+            [ngClass]="{'is-invalid' : userName.invalid}">
+         <div class="invalid-feedback">
+            <span>User name is required!!</span>
+         </div>
+      </div>
+   </div>
+
+   <div class="form-group row">
+      <label class="col-sm-1 col-form-label">email:</label>
+      <div class="col-sm-6">
+         <input [(ngModel)]="user.email" 
+            name="email" 
+            #userEmail="ngModel" 
+            class="form-control" 
+            required="true" 
+            minlength="10"
+            maxlength="30" 
+            [ngClass]="{'is-invalid' : userEmail.invalid}">
+         <div class="invalid-feedback">
+            <span>User email is required!!</span>
+         </div>
+      </div>
+   </div>
+
+   <div class="form-group row">
+      <label class="col-sm-1 col-form-label">Site:</label>
+      <div class="col-sm-6">
+         <input [(ngModel)]="user.site" 
+            name="site" 
+            #userSite="ngModel" 
+            class="form-control" 
+            required="true"
+            minlength="10" 
+            maxlength="30" 
+            [ngClass]="{'is-invalid' : userSite.invalid}">
+         <div class="invalid-feedback">
+            <span>User site is required!!</span>
+         </div>
+      </div>
+   </div>
+      
+   <div class="form-group row">
+      <label class="col-sm-1 col-form-label">Added:</label>
+      <div class="col-sm-6">
+         <input 
+            [(ngModel)]="user.admission" 
+            name="admissionDate"
+            #userAdmission="ngModel" 
+            class="col-sm-2 form-control"
+            required="true" 
+            type="date" 
+            min="2020-01-01"
+            [ngClass]="{'is-invalid' : userAdmission.invalid}"
+         >
+         <div class="invalid-feedback">
+            <span>Admission Date is required!!</span>
+         </div>
+      </div>
+   </div>   
+   
+   <div class="form-group row">
+      <label class="col-sm-1 col-form-label">Image Url:</label>
+      <div class="col-sm-6">
+         <input 
+         type="file" 
+         name="imageUrl" 
+         accept="image/png, image/jpeg"
+         [(ngModel)]="user.imageUrl" 
+         #userImageUrl="ngModel"
+         class="form-control"
+         [ngClass]="{'is-invalid' : userImageUrl.invalid}"
+         >
+         <div class="invalid-feedback">
+            <span>Course image url is required!!</span>
+         </div>
+      </div>
+   </div>
+   <button 
+      [disabled]=userForm.invalid 
+      class="btn btn-primary"
+      (click)="save()"
+   >Save</button>
+   <button 
+      class="btn btn-secondary"
+      [routerLink] = "['/users']"
+   >Back</button>
+</form>

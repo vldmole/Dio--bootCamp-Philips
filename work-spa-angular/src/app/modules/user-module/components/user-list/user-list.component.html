@@ -1,0 +1,41 @@
+
+<div class="container">
+   <h2> User List </h2>
+
+   <div class="form-group row">
+      <label class="col-sm-2 col-form-label">Filter by:</label>
+      <div class="col-sm-10">
+         <input [(ngModel)]="filter" class="form-control">
+      </div>
+   </div>
+
+   <table class="table table-striped">
+      <thead class="user-list">
+         <tr>
+            <th></th>
+            <th>User Details</th>
+            <th>
+               Options
+               <a [routerLink]="['/user']" class="btn btn-secondary m-1">+</a>
+            </th>
+         </tr>     
+      </thead>
+      <tbody>
+         <tr *ngFor="let user of filteredUsers">
+            <td class="container-user-image">
+               <img [src]='user.imageUrl' class="user-image"/>
+            </td>
+            <td>
+               {{user.name}}<br>
+               <img src="assets/images/email-logo.png" width="25px" height="20px">{{user.email}}<br>
+               <img src="assets/images/web-logo.png" width="25px" height="20px">{{user.site}}<br>
+               Added on: {{user.admission | date: "dd/MM/yyyy"}}
+            </td>
+            <td>
+               <a [routerLink]="['/user', user.id]" class="btn btn-primary m-1">Edit</a>
+               <button (click)="deleteById(user.id)" class="btn btn-danger m-1">X</button>
+            </td>
+         </tr>
+      </tbody>
+   </table>
+</div>
