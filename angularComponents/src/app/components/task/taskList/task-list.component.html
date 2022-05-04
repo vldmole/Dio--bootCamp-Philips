@@ -1,0 +1,12 @@
+
+<mat-card>
+   <mat-card-content>
+      <mat-list role="list" class="container">
+         <div *ngFor="let task of taskList">
+            <app-task-list-item [task]="task" (onDelete)="onDeleteHandler($event)"></app-task-list-item>
+         </div>
+      </mat-list>
+   </mat-card-content>
+</mat-card>
+
+

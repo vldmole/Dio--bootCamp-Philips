@@ -1,0 +1,30 @@
+
+.item-container
+{
+   width: 100%;
+   display: table;
+   clear: both;
+}
+
+.item-text
+{
+   float: left;
+   width: 80%;
+   vertical-align: middle;
+   padding: 5px;
+}
+
+.item-actions-container
+{
+   float: left;
+   width: 20%;
+   padding: 5px;
+   vertical-align: middle;
+}
+
+.item-action
+{
+   padding: 2px 2px 2px 2px;
+   width: 30px;
+   align-self: center;
+}

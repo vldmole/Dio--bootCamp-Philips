@@ -1,0 +1,21 @@
+
+<mat-list-item role="listitem" class="item-container" *ngIf="task">
+   <p class="item-text" 
+      [ngStyle]="{textDecoration: task.done ? 'line-through' : 'none'}"
+   >
+      {{task.title}}
+   </p>
+   <div class="item-actions-container">
+      <mat-checkbox #check 
+         [checked]="task.done" 
+         (change)="setTaskDone(check.checked)">
+      </mat-checkbox>
+      <button 
+         mat-icon-button 
+         color="primary" 
+         class="item-action"
+         aria-label="Exclui a tarefa"
+         (click)="delete()"
+      ><mat-icon>remove</mat-icon></button>
+   </div>
+</mat-list-item>
