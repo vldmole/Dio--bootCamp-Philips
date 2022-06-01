@@ -1,0 +1,44 @@
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8 table">
+   <ng-container matColumnDef="id" class="container">
+      <th mat-header-cell *matHeaderCellDef>id</th>
+      <td mat-cell *matCellDef="let user">
+         {{user.id}}
+      </td>
+   </ng-container>
+
+   <ng-container matColumnDef="firstName" class="container">
+      <th mat-header-cell *matHeaderCellDef>Nome</th>
+      <td mat-cell *matCellDef="let user">
+         {{user?.firstName}} {{user?.midleName}} {{user?.lastName}}
+      </td>
+   </ng-container>
+
+   <ng-container matColumnDef="birthDate" class="container">
+      <th mat-header-cell *matHeaderCellDef>Nascido em</th>
+      <td mat-cell *matCellDef="let user">
+         {{user.birthDate.toLocaleDateString()}}
+      </td>
+   </ng-container>
+
+   <!-- action Column -->
+   <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let user">
+         <app-stylized-button 
+            [actionName]   = "'edit'" 
+            [actionObject] = "this" 
+            [onClickFnc]   = "this.edit" 
+            [onClickArg]   =  "user"
+         ></app-stylized-button>
+         <app-stylized-button 
+            [actionName]   = "'delete'" 
+            [actionObject] = "this" 
+            [onClickFnc]   ="this.delete" 
+            [onClickArg]   = "user"
+         ></app-stylized-button>
+      </td>
+   </ng-container>
+
+   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

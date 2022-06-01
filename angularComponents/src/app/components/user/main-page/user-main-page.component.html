@@ -1,0 +1,18 @@
+
+<app-user-form #userForm
+   (onSave)="onSave($event)"
+></app-user-form>
+
+<app-user-list #userList 
+   (onEdit)="onEdit($event)" 
+   (onDelete)="onDelete($event)"
+   [users]="users"
+></app-user-list>
+
+<app-user-dynamic-list #dynamicUserList
+   (onEdit)="onEdit($event)" 
+   (onDelete)="onDelete($event)"
+></app-user-dynamic-list>
+
+
+

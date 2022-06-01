@@ -7,6 +7,8 @@ import { HeaderModule } from './components/header/header.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TaskModule } from './components/task/task.module';
 
+import { UserModule } from './components/user/user.module';
+
 
 
 
@@ -19,6 +21,7 @@ import { TaskModule } from './components/task/task.module';
     AppRoutingModule,
     HeaderModule,
     TaskModule,
+    UserModule,
     BrowserAnimationsModule
   ],
   exports: [

@@ -1,0 +1,14 @@
+.colContainer {
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   flex-flow: column;
+}
+
+.rowContainer {
+   width: 100%;
+   display: flex;
+   flex-direction: row;
+   flex-flow: row;
+   justify-content: space-between;
+}

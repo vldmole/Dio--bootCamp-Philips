@@ -1,0 +1,66 @@
+<div class="card w-100 mt-2">
+   <div class="card-body">
+      <h1 class="card-title text-center">Usuário</h1>
+      <form [formGroup] = "userForm" (ngSubmit) = "onSubmit()">
+         
+         <div class="row">
+            
+            <div class="col p-1">
+               <div class="form-floating">
+                  <input type="text" class="form-control" formControlName="firstName" id="firtName"
+                     placeholder="Nome do usuário, ex: 'Pedro de Alcantara Peixoto' -> 'Pedro'">
+                  <label for="firstName">Nome</label>
+               </div>
+            </div>
+
+            <div class="col p-1">
+               <div class="form-floating">
+                  <input type="text" class="form-control" formControlName="midleName" id="midleName"
+                     placeholder="Nome do Meio, ex: 'Pedro de Alcantara Peixoto' -> 'de Alcantara'">
+                  <label for="midleName">Nome do meio</label>
+               </div>
+            </div>
+            
+            <div class="col p-1">
+               <div class="form-floating">
+                  <input type="text" class="form-control" formControlName="lastName" id="lastName"
+                     placeholder="Sobrenome do usuário, ex'Pedro de Alcantara Peixoto' -> 'Peixoto'">
+                  <label for="lastName">Sobrenome</label>
+               </div>
+            </div>
+
+         </div>
+         
+         <div class="row">
+            
+            <div class="col p-1">
+               <div class="form-floating">
+                  <input type="date" class="form-control" formControlName="birthDate" id="birthDate"
+                     placeholder="Data de nascimento, no formato 'dd/mm/aaaa'">
+                  <label for="birthDate">Data de Nascimento</label>
+               </div>
+            </div>
+            
+            <div class="col p-1">
+               <div class="form-floating">
+                  <input type="text" class="form-control" formControlName="job" id="job"
+                     placeholder="Profissão, Cargo ou Emprego do usuário">
+                  <label for="job">Profissão</label>
+               </div>
+            </div>
+
+         </div>
+         
+         <div class="row my-1">
+         
+            <div class="form-group col p-1">
+               <button type="button" class="btn btn-outline-danger float-start" (click)="onCancel">Cancelar</button>
+               <button type="submit" class="btn btn-outline-success float-end">Enviar</button>
+            </div>
+         
+         </div>
+      </form>
+   </div>
+</div>
+
+

@@ -1,0 +1,46 @@
+<div class="card w-100 mt-2">
+   <h1 class="card-title text-center">Lista de Usuários</h1>
+   <div class="row">
+      <label class="col-sm-2 col-form-label">Filter by:</label>
+      <div class="col-sm-10">
+         <input [(ngModel)]="filter" class="form-control">
+      </div>
+   </div>
+   <div class="card-body">
+      <mat-card>
+         <mat-card-content>
+            <mat-list role="list" class="colContainer">
+               <div *ngFor="let user of filteredUsers">
+                  <div class="rowContainer">
+                     <app-user-list-item 
+                        [user]="user" 
+                     ></app-user-list-item>
+                     <div class="item-actions-container">
+                        <button 
+                        mat-icon-button 
+                        color="primary" 
+                        class="item-action" 
+                        aria-label="Editar" 
+                        (click)="edit(user)"
+                        >
+                           <mat-icon>edit</mat-icon>
+                        </button>
+                        <button 
+                           mat-icon-button 
+                           color="primary" 
+                           class="item-action" 
+                           aria-label="Excluir" 
+                           (click)="delete(user)">
+                           <mat-icon>remove</mat-icon>
+                        </button>
+                     </div>
+                  </div>
+               </div>
+            </mat-list>
+         </mat-card-content>
+      </mat-card>
+   </div>
+</div>
+     
+
+

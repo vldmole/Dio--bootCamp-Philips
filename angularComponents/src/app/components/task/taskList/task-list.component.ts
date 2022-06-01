@@ -14,15 +14,14 @@ export class TaskListComponent implements OnInit
   @Input() onDeleteHandler: any;
   
   constructor() { }
+  
   ngOnInit(): void
   {
     this.onDeleteHandler({ id: 0, title: '', done: false });
   }
+
   delete(task: ITask)
   {
     console.log('taskList', task);
   }
-
-
-
 }
